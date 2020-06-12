@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.cf::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.content{
+    overflow: hidden;
+    position: relative;
+    width: 440px;
+    height: 194px;
+    background: url("img/heitiao.png");
+    z-index: 100000;
+    transition: all .3s;
+    /* left: 440px; */
+}
+.imgs{
+    position: relative;
+    width: 10000px;
+    display: flex;
+}
+.imgs img{
+    
+    width: 440px;
+    height: 194px;
+    float: left;
+}
+.nav{
+    position: absolute;
+    bottom: 10px;
+    right: 22px;
+    z-index: 10000;
+}
+.icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("img/icon.png")no-repeat -854px -790px;
+}
+.icon:hover{
+    background: url("img/icon.png")no-repeat -915px -790px;
+}
+.imgs>div span{
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+}
+.imgs>div{
+    height: 194px;
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}

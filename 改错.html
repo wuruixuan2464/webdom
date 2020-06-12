@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1785031_j0y34yl6na.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.content{
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50% , -50%);
+		}
+		.content i{
+			color: rgb(red, green, blue);
+		}
+		input{
+			width: 300px;
+		}
+		.box{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 800px;
+			height: 600px;
+			background-color: rgba(0, 0, 0, .7);
+		}
+		.ppap{
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50% , -50%);
+		}
+		.ppapp{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50% , -50%);
+		}
+		.ppapp1{
+			position: absolute;
+			top: 70%;
+			left: 50%;
+			transform: translate(-50% , -50%);
+		}
+		.zh1,.zh11,.zh111,.zh3{
+			color: rgb(233, 12, 30);
+			font-size: 12px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50% , -50%);
+			display: none;
+		}
+		.zh2,.zh22,.zh222{
+			color: rgb(12, 233, 130);
+			font-size: 12px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50% , -50%);
+			display: none;
+		}
+		.zh2,.zh1,.zh3{
+			top: 39%;
+		}
+		.zh22,.zh11{
+			top: 60%;
+		}
+		.zh222,.zh111{
+			top: 80%;
+		}
+		.d{
+			position: relative;
+			transform: translate(0px , 400px);
+		}
+	</style>
+	<script src="bz/jquery.js"></script>
+</head>
+<body>
+	<!-- <audio src="Alan-Walker-135.ogg" controls id="au" autoplay></audio> -->
+	<div class="d">
+	<div class="box">
+		<div class="content">
+			<i class="iconfont icon-feiji" style="font-size: 50px;"></i>
+		</div>
+	</div>
+</div>
+	<!-- <div class="box">
+		<div class="zh">
+			<input type="text" class="ppap" placeholder="请输入账号，首位必须为字母,最少9位，最多16位" maxlength="16">
+			<span class="zh1">为了您的账号安全请规范账号</span>
+			<span class="zh2">正确</span>
+			<span class="zh3">不能为空！</span>
+		</div>
+		<div class="zhh">
+			<input type="password" class="ppapp" placeholder="请输入密码，首位必须为字母,最少9位，最多16位" maxlength="16">
+			<span class="zh11">为了您的账号安全请规范密码</span>
+			<span class="zh22">正确</span>
+		</div>
+		<div class="zhh1">
+			<input type="password" class="ppapp1" placeholder="请重新输入密码" maxlength="16">
+			<span class="zh111">和设置的密码不同！</span>
+			<span class="zh222">正确</span>
+		</div>
+	</div> -->
+	<script>
+	// 	var scsc = $(".box");
+	// 	console.log(scsc);
+	// 	//添加span标签到scsc
+	// var sa =	$("<span>")
+	// 	sa.appendTo(scsc);
+	// 		//替换scsc为p
+	// 		// scsc.replaceWith($("<p>"));
+	// 			//删除scsc中的span标签
+	// 			sa.remove();
+		// scsc.click(function(){
+		// 	scsc.animate({
+		// 		width: "1000px",
+		// 		height:"1000px",
+		// 		backgroundColor:"#f99"
+		// 	})
+		// 	scsc.fadeOut();
+		// })
+		// au.play();
+		// var sd = "aawdwad"
+		// var sta = new RegExp("aAw","i");
+		// var st1 = sta.test(sd);
+		// var inp = document.querySelector(".ppap");
+		// var zh1 = document.querySelector(".zh1");
+		// var zh2 = document.querySelector(".zh2");
+		// var zh3 = document.querySelector(".zh3");
+		// var inpp = document.querySelector(".ppapp");
+		// var zh11 = document.querySelector(".zh11");
+		// var zh22 = document.querySelector(".zh22");
+		// var inppp = document.querySelector(".ppapp1");
+		// var zh111 = document.querySelector(".zh111");
+		// var zh222 = document.querySelector(".zh222");
+		// inp.onblur = function(){
+		// 	var val = inp.value;
+		// 	if(val != ""){
+		// 		zh3.style = "display:none;";
+		// 	var zz = /^[a-z]\d{8,15}$/i;
+		// 	var stt = zz.test(val);
+		// 	if(!stt){
+		// 		zh1.style = "display:block;";
+		// 		zh2.style = "display:none;";
+		// 	}
+		// 	else{
+		// 		zh1.style = "display:none;";
+		// 		zh2.style = "display:block;";
+		// 	}
+		// 	}
+		// 	else{
+		// 		zh1.style = "display:none;";
+		// 		zh2.style = "display:none;";
+		// 		zh3.style = "display:block;";
+		// 	}
+		// }
+		// inpp.onblur = function(){
+		// 	var vall = inpp.value;
+		// 	var zz1 = /^[a-z]\d{8,15}$/i;
+		// 	var stt1 = zz1.test(vall);
+		// 	if(!stt1){
+		// 		zh11.style = "display:block;";
+		// 		zh22.style = "display:none;";
+		// 	}
+		// 	else{
+		// 		zh11.style = "display:none;";
+		// 		zh22.style = "display:block;";
+		// 	}
+		// }
+		// inppp.onblur = function(){
+		// 	if(inpp.value!=inppp.value){
+		// 		zh111.style = "display:block;";
+		// 		zh222.style = "display:none;";
+		// 	}
+		// 	else{
+		// 		zh111.style = "display:none;";
+		// 		zh222.style = "display:block;";
+		// 	}
+		// }
+		//获取装飞机的盒子
+			var c = document.querySelector(".content");
+			var n = document.querySelector(".box");
+			//游览器的宽度减 盒子的宽度
+			var rightwidth =  n.offsetLeft+n.offsetWidth;
+			console.log(n.offsetWidth,n.offsetLeft);
+			//游览器的高度减盒子的高度
+			var topheight =  window.innerHeight-c.scrollHeight;
+			//鼠标按下
+			var leett = c.offsetParent.offsetLeft;
+			var toop = c.offsetParent.offsetTop;
+			console.log(leett);
+			c.onmousedown = function(e){
+					//鼠标距离当前盒子的左边距离
+					x1 = e.offsetX;
+					//鼠标距离游览器最左边的距离
+					x2 = e.clientX;
+					
+					x3 = x2-x1;
+					console.log(x3)
+					//鼠标距离当前盒子的上边距离
+					y1 = e.offsetY;
+					//鼠标距离游览器最上边距离
+					y2 = e.clientY;
+					// //盒子距离游览器上边的距离
+					// y3 = y2-y1;
+				//鼠标在游览器上移动	
+				document.onmousemove = function(e){
+					//鼠标距离游览器最左边的距离
+					x = e.clientX;
+					// console.log(x)
+					//鼠标距离游览器最左边的距离 - 鼠标距离当前盒子的左边距离
+					ss = x ;
+					console.log(ss)
+					// console.log(x3);
+					//如若小于0 则飞机超出浏览器的最小宽度 纠正到0贴边
+					ss = ss <= 0 ? 0 : ss;
+					//如若小于游览器的宽度减 盒子的宽度 则飞机超出浏览器的最大宽度 再纠正
+					ss = ss >= rightwidth?rightwidth:ss;
+					//移动
+					c.style.marginLeft =ss -leett +"px";
+					//y轴同上
+					y = e.clientY;
+					ss1 = y;
+					ss1 = ss1 <= 0 ? 0 : ss1;
+					ss1 = ss1 >= topheight?topheight:ss1;
+					c.style.marginTop =ss1 -toop-400+"px";
+				
+				}
+			}
+			//在游览器中点击弹起则关闭移动
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+
+
+// var op = {
+// 	long : 854,
+// 	height : 555
+// }
+// var op1 = op;
+// op1.long = 888;
+// //浅拷贝  复制地址 两个对象一模一样
+// //更改其中任意一个元素内容 另一个对象的元素也跟着改变
+// console.log(op , op1);
+
+// //深拷贝 直接复制对象内容 重新生成新的地址 也就是新的对象
+// //改变对象任意元素的值 和另一个没有关系 
+// var op1 = {}
+// for(var i in op){
+// 	op1[i] = op[i];
+// }
+// op1.long = 777;
+// console.log(op,op1);
+
+// //工厂模式  优点  可以批量生产属性名相同的函数
+// //缺点 无法确定生产的函数属于谁
+// function pos(name,age){
+// 	var obj = {
+// 		names: name,
+// 		ages : age
+// 	}
+// 	return obj;
+// }
+// var p1 = pos("babab" , 55);
+// console.log(p1);
+// var p2 = pos("564" , 565);
+// console.log(p2)
+// //构造函数  也可以批量生产函数
+// //可以确定生产的属于哪个函数
+// //this指向
+// function Pos(name,age){
+// 	this.name = name,
+// 	this.age = age
+// }
+// function Dog(name,age){
+// 	this.name = name,
+// 	this.age = age
+// }
+// var p3 = new Pos("11" , 2);
+// console.log(p3);
+// var p4 = new Dog("shisan" , 32);
+// console.log(p4);
+// //利用原型链给构造函数添加属性
+// //prototype 
+// Dog.prototype.eat = function(){
+// 	return 1;
+// }
+// //实例对象利用__proto__给原型对象添加属性
+// p4.__proto__.move = function(){
+// 	return "爬";
+// }
+
+// //原型对象 是object的实例对象 
+// //object的原型对象指向空  null
+// //构造函数是 function的实例对象
+
+// console.log(p4.__proto__.eat());
+// console.log(Dog.prototype);
+
+// var c = {
+// 	a: 5,
+// 	p: 3
+// }
+// let a = 1;
+// let b = [1,2,3,4,5]
+// let d;
+// //检查数据类型
+// function type(x){
+// 	return Object.prototype.toString.call(x);
+// }
+// console.log(type(a),type(b),type(c),type(d));
+
+
+// let s1 = Symbol('foo');
+// let s2 = Symbol('bar');
+// let sb = {
+// 	a:4,
+// }
+// s1.toString() // "Symbol(foo)"
+// s2.toString() // "Symbol(bar)"
+// console.log(s1.toString(),s2.toString())
+// //ajax 封装
+// function ajax(x){
+// 	return new Promise((resolve,reject)=>{
+// 		let html = new XMLHttpRequest();
+// 		html.open("get" , x);
+// 		html.send();
+// 		html.onreadystatechange = ()=>{
+// 			if(html.readyState == 4){
+// 				if(html.status == 200){
+// 					resolve(JSON.parse(html.response));
+// 				}
+// 				else{
+// 					reject("erro");
+// 				}
+// 			}
+// 		}
+// 	})
+// }
+
+// function* generator(){
+//   let cp = yield ajax("https://pujie1213.top:424/rcGame");
+// 	yield "dsffs";
+// 	return "over"
+// }
+// var th = generator();
+
+
+// th.next().value.then((data)=>{
+// 	// th.next().value
+// 	console.log(data)
+// });
+
+// // ajax("https://pujie1213.top:424/rcGame").then((data)=>{
+// // 		  console.log(data)
+// // 		  return ajax("https://pujie1213.top:424/rcGame");
+// // 	}).then((data1)=>{
+// // 		console.log(data1)
+// // 	})
+//    //生成一个实例化对象
+//    var http = new XMLHttpRequest();
+//     //规划请求
+//     http.open("GET", "https://warframes.cn:424/rcGame", true);
+//     //发送请求
+//     http.send();
+//     //http.readyState  准备阶段
+//     //0 实例化对象 1 规划请求 2 发送请求 3 等待响应 4响应完毕可以使用
+//     //http.status  状态码 200代表 访问成功
+//     http.onreadystatechange = function(){
+//         if(http.status == 200){
+//             if(http.readyState == 4){
+//                 console.log(JSON.parse(http.response));
+//             }
+//         }
+//     }
+//     //jsonp  先声明一个回调函数 利用script特权向服务端发送一个http请求 该回调函数的函数名
+//     //通过 callback的参数传给后端  后端解析函数名 并返回调用之后的代码 将返回的数据传递到函数的实参中
+//     // function fn(a){
+//     //     console.log(a); 
+//     // }
+	</script>
+</body>
+</html>

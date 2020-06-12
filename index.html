@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Refresh"content="0.1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .a{
+            width: 500px;
+            margin: 0 auto;
+
+            display:flex;
+            flex-flow: row,nowrap;
+            justify-content: space-around;
+            flex-basis: auto;
+            /* justify-content: space-around;  */
+        }
+        .a>div{
+            position: relative;
+            padding: 5px 12px;
+            text-align: center;
+            background-color: rgb(115,201,229);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            border-radius: 5px;
+        }
+        .a>div:hover {
+            color: #f99;
+        }
+        .cc1{
+            position: absolute;
+            left: 0;
+            top: 20;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .cc2{
+            position: absolute;
+            left: 0;
+            top: 20;
+            opacity: 1;
+            pointer-events: none;
+        }
+        .cc2-1{
+    
+            position: absolute;
+            left: 0;
+            top: 30px;
+            width: 220px;
+            height: 220px;
+            
+
+        }
+        .cc2-move img{
+           transform: translate(0 , -220px);
+        }
+        .cc2-1 img{
+            margin-bottom: -5px;
+            opacity: 1;
+            transition: all .5s;
+            pointer-events: none;
+        }
+        
+        .ss{
+            width: 100%;
+            height: 792px;
+            background: url("img/a.PNG") no-repeat 0 0;
+            background-size: 100% 100%;
+            transition: all 2s;
+        }
+        .ss1{
+            width: 100%;
+            height: 792px;
+            background: url("img/a1.PNG") no-repeat 0 0;
+            background-size: 100% 100%;
+            transition: all 2s;
+        }
+        .q1,.q2,.q3{
+            width: 300px;
+            height: 211px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="gg">
+    <div class="ss">    
+    </div>
+    <div class="a">
+        <div class="cc">
+        <p> 死亡凝视</p>
+        <div class="cc1">
+            <img src="img\55d45d033c8b8057c4168270c6cf392b4adad532.png" alt="">
+        </div>
+        </div>
+        <div class="c2">
+            <p> 死亡凝视</p>
+            <div class="cc2-1">
+                <img src="img\6de80e09cbc3f321196098bb9ae52b65c78f2e33.png" alt="">
+                <img src="img\55d45d033c8b8057c4168270c6cf392b4adad532.png" alt="">
+                <img src="img\4c671d0cbb94cc622d8495f5dff636d95107fca9.png" alt="">
+                <img src="img\f8fe2f9ac3bc1076d140c122ba5d4bf2f6aa3d79.png" alt="">
+            </div>
+        </div>
+        <div class="cc">
+            <p> 死亡凝视!</p>
+        </div>
+        <div class="cc">
+            <p> 死亡凝视</p>
+        </div>
+        <div class="cc">
+            <p> 死亡凝视</p>
+        </div>
+    </div>
+    </div>
+    <input type="checkbox" id = "1">
+    <label for="1">全选/撤销</label>
+    <form action="">
+    <input type="checkbox" id = "2">
+    <label for="2">886</label>
+    <input type="checkbox" id = "3">
+    <label for="3">887</label>
+    <input type="checkbox" id = "4">
+    <label for="4">888</label>
+    <input type="checkbox" id = "5">
+    <label for="5">889</label>
+    </form>
+    <div class="q1">
+        1
+        <div class="q2">
+            2
+            <div class="q3">
+                3
+                
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <button type="submit">
+            asdasdas
+        </button>
+    </form>
+</body>
+<script>
+    var s = document.getElementsByClassName("cc");
+    console.log(s);
+    var p = document.createElement("p");
+    console.log(p);
+ 
+   var q1 = document.querySelector(".q1");
+   var q2 = document.querySelector(".q2");
+   var q3 = document.querySelector(".q3");
+// q1.onclick = function(){
+//     console.log(1);
+// }
+q2.onclick = function(){
+    console.log(2);
+    event.stopPropagation();
+}
+q3.onclick = function(){
+    console.log(3);
+    //event.stopPropagation() 方法阻止事件冒泡到父元素，阻止任何父事件处理程 序被执行。
+    event.stopPropagation();
+}
+var sub = document.querySelector("button");
+sub.onclick = function(){
+    //取消事件的默认动作。
+event.preventDefault();
+console.log(1);
+}
+
+function cd(){
+    console.log("bababababab");
+}
+q1.addEventListener("click" ,cd );  
+console.log(q1.attachEvent);
+if(q1.attachEvent){
+    q1.attachEvent("onclick" ,cd );  
+}else{
+    q1.addEventListener("click" ,cd );  
+}
+// if(q1.detachEvent){
+//     q1.detachEvent("onclick" , cd);
+// }else{
+//     q1.removeEventListener("click" , cd);
+// }
+// onmousewheel onmouseweel onmouseweel  鼠标滚轮事件 不需要扎带滚动条
+// onscroll onscroll onscroll onscroll onscroll 
+//onscroll onscroll onscroll onscroll onscroll onscroll 鼠标滚轮事件 需要自带滚动条
+//setInterval 计时器
+//clearIntercval 关闭计时器
+// setTimeout 一次性定时器
+//clearTimeout 关闭计时器
+//firefox 鼠标滚轮事件 
+//DOMMouseScroll
+//用 addEventListener  addEventListener addEventListener 事件对象
+//addEventListener  addEventListener addEventListener("")
+//offsetWidth OffsetHeight offsetParent  offsetLeft offsetTop
+//ie7 不支持 clientWidth scrollWidth scrollHeiight 
+//window.innerWidth 游览器宽度
+//widow.innerHeight 浏览器高度
+
+// var c = {
+//     dd :1
+// }
+
+// function cc(x,y,z){
+//     console.log(this,x,y,z);
+// }
+
+// cc.call(c,1,2,3);
+// cc.apply(c,[1,3,4]);
+// cc.bind(c)(1,2,3);
+// function Po(e){
+//     this.name = e;
+//     this.long = [10,22,21]
+//     this.age = 18
+// }
+// Po.prototype.index = 4;
+
+//原型链继承  只能用于一个实力对象
+//任意实例都可以修改原型中属性的值 
+//并且新生产的实例也会继承修改后的属性值
+// Poo.prototype = new Po();
+// console.log(Poo.prototype);
+// var p1 = new Poo();
+// // p1.age = 7;
+// p1.long.push(45);
+// console.log(p1.long);
+// console.log(p1.age);
+// var p3 = new Poo();
+// console.log(p3.long)
+//构造函数继承
+// function Poo(){
+//     Po.call(this);
+// }
+// var p1 = new Poo();
+// p1.long.push(45);
+// console.log(p1.long);
+// var p2 = new Poo();
+// console.log(p2.long)
+
+//组合继承
+// function Poo(s){
+//     //继承了Po，同时还传递了参数
+//     Po.call(this,"sb");
+//     // this.name = "sr";
+// }
+// Po.prototype.index = 1;
+// Poo.prototype = new Po();
+
+// console.log(Poo.prototype);
+// var p1 = new Poo();
+// p1.long.push(45);
+// console.log(p1.long);
+// console.log(p1.name);
+// var p2 = new Poo();
+// console.log(p2.long)
+// console.log(p2.index)
+
+// function Su(){
+//     this.colors = ["red", "blue", "green"];
+// }
+// // Su.prototype.Fun = function(){
+ 
+// // };
+// function Sub(){
+// }
+// //继承了SuperType
+// Sub.prototype = new Su();
+// var instance1 = new Sub();
+// instance1.colors.push("black");
+// console.log(instance1.colors); //"red,blue,green,black"
+// var instance2 = new Sub();
+// console.log(instance2.colors); //"red,blue,green,black
+// function object(o){
+//     function F(){}
+//     F.prototype = o;
+//     return new F();
+// }
+//原型式子继承
+//创建obj 每次调用都会生产新的构造函数
+//而原型链只有一个构造函数
+//所以 obj实例对象在修改原型时 只修改了自己的原型对象
+//不会影响父级对象 没必要构建构造函数，仅仅是想模拟一个对象的时候使用
+//基于一个已有的对象创建一个新的对象 新对象的原型指向已有对象
+function obj(e){
+    function F(){};
+    F.prototype = e;
+    return new F();
+}
+function Po(e){
+    this.name = e;
+    this.long = [10,22,21]
+    this.age = 18
+}
+Po.prototype.wo = function(){
+    console.log(this.name);
+};
+// function c(q){
+//     var obj1 = obj(q);
+//     obj1.cc = 7;
+//     return obj1; 
+// }
+// var c1 = c(a);
+// console.log(c1);
+
+function Ro(e){
+    Po.call(this , e);
+}
+// Ro.prototype = new Po();
+Ro.prototype = Object.create(Po.prototype);
+console.log(Po.prototype.constructor);//相等
+console.log(Ro.prototype.constructor);//相等
+Ro.prototype.constructor = Ro;
+console.log(Ro.prototype.constructor);//指向自身
+var d = new Ro();
+console.log(d.wo)
+
+var d = {
+    x:1,
+    y:2
+}
+function fff(a){
+    a.x++; 
+    a.y--;
+}
+fff(d);
+
+console.log(d);
+// var p1 = obj(a);
+// p1.p = 7;
+// var p2 = obj(a);
+// console.log(p2.p);
+// console.log(p1.q,p1.p);
+//事件对象
+//事件对象的兼容写法
+//var e = window.event || ev
+//ie window.event
+//e.clientX 鼠标距离浏览器左侧的边距 e.clientX  e.clientX
+//e.clientY 鼠标距离浏览器上边的距离 e.clientY
+//e.offsetX 鼠标距离事件源左侧的距离
+//e.offsetY 鼠标距离事件源上边的距离
+//e.pageX 鼠标距离浏览器左侧的距离 包含滚动条备卷曲的距离
+//e.pageY  上边的距离
+
+//谷歌  e.daltaY 100 滚轮往下 e.dalteY  -100滚轮向上
+//Firefox e.detail  3 滚轮向下  e.detail -3 滚轮向上
+//ie e.wheelDelta -120 滚轮向下 e.wheelDelta 120 滚轮向上
+//构造函数  new关键字做的4件事
+//1 创建一个空对象 2将this指向这个空对象 3 逐行执行代码 4返回这个对象
+
+//事件传播机制
+//分3个阶段  1捕获阶段 2 目标阶段 3冒泡阶段
+//谷歌  addEventListener("事件名  不加on " ， 匿名函数 ， default false 冒泡)
+//删除事件
+//removeEventListener("事件名 也是没有on " ， 匿名函数)
+//ie  attachEvent("on+事件名" ， 匿名函数)；
+//detachEvent ("on+事件名" ， 匿名函数)；
+//ie 没有捕获阶段
+//事件委托
+//将子集事件 委托给父级来做
+//优点 可以解决动态添加的元素无法绑定事件的问题
+//提高性能  多个绑定事件可以变成一个事件
+//缺点 this指向备破坏  可以利用事件对象下的target来取代this
+//e.target 兼容ie   e.srcElement 
+</script>
+<script type="text/javascript" src="./javascript.js"></script>
+</html>

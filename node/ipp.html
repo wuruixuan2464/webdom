@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <label for="#name">用户名</label>
+    <input type="text" id="name">
+    <label for="#mima">密码</label>
+    <input type="text" id="mima">
+    <input type="submit" id="submit">
+</body>
+<script>
+    var name1 = document.querySelector("#name");
+    var mima = document.querySelector("#mima");
+    submit.onclick = function(){
+        // var http = new XMLHttpRequest();
+        // http.open("post" , "http://localhost:80/login");
+        // http.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+        // http.send(`name1=${name1.value}&mima=${mima.value}`);
+        // $.get("https://pujie1213.top:424/rcGame",{id:8848,ip:110},(d)=>{
+        //     console.log(d);
+        // })
+        // $.post("http://localhost:80/login",{id:name1.value,ip:mima.value},(e)=>{
+        //     console.log(e);
+        // })
+        $.ajax({
+            //
+            url:"http://localhost:80/login",
+            type:"post",
+            data:{
+                aacc:1214,
+                addd:754
+            },
+            success(daat){
+                console.log(daat);
+            },
+            error(e){
+                console.log(e);
+            },
+            complete(XHR,state){
+                console.log(XHR,state);
+            }
+        })
+    }
+</script>
+
+</html>

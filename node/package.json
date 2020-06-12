@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ind.js",
+  "dependencies": {
+    "_charenc@0.0.2@charenc": "^0.0.2",
+    "_crypt@0.0.2@crypt": "^0.0.2",
+    "_md5@2.2.1@md5": "^2.2.1",
+    "_is-buffer@1.1.6@is-buffer": "^1.1.6",
+    "crypt": "^0.0.2",
+    "charenc": "^0.0.2",
+    "is-buffer": "^1.1.6",
+    "md5": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="cc">
+        {{message}}
+        <!-- v-html 可解析标签 -->
+        <div v-html = "message1"></div>
+        <!-- v-show 为true 时显示 false消失  等同于切换元素的display-->
+        <div v-show = "isSeen">{{message2}}</div>
+        {{num}}
+        <input type="button" value="消失" @click="nn()">
+        <input type="button" value="加" @click="add()">
+        <input type="button" value="减" v-on:click="sub()">
+
+        <!-- <div v-if = "Math.random()*10 >= ss" >
+            成功
+        </div>
+        <div v-else>
+            失败
+        </div> -->
+        <ul id="p">
+            <li v-for = "item in vc">
+                  {{item}} 
+            </li>
+            <li v-for = "item in vcc">
+                {{item}} 
+          </li>
+        </ul>
+
+        <div id="lp">
+            <hello>
+                <div slot="a1">这是1</div>
+                <div slot="a2">这是2</div>
+                <div slot="a3">这是3</div>
+                <span>123124124124</span>
+            </hello>
+            <hello>
+                <div slot="a1">这是1</div>
+                <div slot="a2">这是2</div>
+                <div slot="a3">这是3</div>
+                <span>123124124124</span>
+                
+            </hello>
+            <hello>
+                <div slot="a1">这是1</div>
+                <div slot="a2">这是2</div>
+                <div slot="a3">这是3</div>
+                <span>123124124124</span>
+            </hello>
+            <hello>
+                <div slot="a1">这是1</div>
+                <div slot="a2">这是2</div>
+                <div slot="a3">这是3</div>
+                <span>123124124124</span>
+            </hello>
+        </div>
+
+        <!-- 模板 -->
+    </div>
+    <template id="box">
+        <div>
+            <span>kasi</span>
+            <slot name="a1">this is one</slot>
+            <slot name="a2">this is two</slot>
+            <slot name="a3">this is three</slot>
+            <span>1111111111111111111</span>
+        </div>
+    </template>
+    <script>
+         Vue.component("hello",{
+            template:"#box"
+        })
+        new Vue({
+            el:"#lp",
+        })
+       
+        var num = 123;
+        var vm = new Vue({
+            el:"#p",
+            data: {
+                vc: ["saryn" , "rhino" , "mesa" , "limbo"],
+                vcc:{ 
+                    saryn:1, 
+                    rhino:2,
+                    mesa:3, 
+                    limbo:4
+                },
+            },
+        })
+        var vm = new Vue({
+            el:"#cc",
+            data: {
+                message:"月落乌啼霜满天",
+                message1:"<span>霜枫渔火对愁眠</span>",
+                message2:"姑苏城外寒山寺",
+                op:"成功",
+                op1:"失败",
+                isSeen:true,
+                num :this.num,
+                ss:6,
+            },
+            methods:{
+                add(){
+                    if(Math.random()*10 >= this.ss){
+                    this.num++;
+                    console.log(this.op)
+                    }else{
+                        console.log(this.op1)
+                    }
+
+                },
+                sub(){
+                    if(Math.random()*10 >= this.ss){
+                        this.num--;
+                        console.log(this.op)
+                    }else{
+                        console.log(this.op1)
+                    }
+                   
+                },
+                nn(){
+                //    this.isSeen = !this.isSeen
+                   if(this.isSeen){
+                       this.isSeen = false
+                   }else{
+                       this.isSeen = true
+                   }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

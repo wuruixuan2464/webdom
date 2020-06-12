@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    background: url("../imgs/ge.gif");
+    border-radius: 2px;
+}
+span{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+}
+/* span:nth-child(2n) */
+i{  position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: hotpink;
+}
+.long{
+    width: 80px;
+    height: 23px;
+    padding: 2px  5px;
+    background-color: dodgerblue;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 23px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+.num{
+    color: firebrick;
+}
